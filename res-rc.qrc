@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/pause_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/play_arrow_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/skip_next_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>icons/skip_previous_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg</file>
+  </qresource>
+</RCC>
