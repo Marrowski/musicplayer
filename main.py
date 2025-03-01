@@ -9,6 +9,7 @@ import os
 
 sound_pause = False
 sound = None
+file = None
 
 
 def open_file():
@@ -16,20 +17,24 @@ def open_file():
     file = filedialog.askopenfile(mode='r')
 
 def play():
-    global sound, sound_pause, exc
+    global sound, sound_pause
     pygame.mixer.init()
     sound = pygame.mixer.Sound(file)
-    
+          
     if sound_pause:
         pygame.mixer.unpause()
         sound_pause = False
     else:
         sound.play()
-    
-    if file:
-        sound.play()
+        
+    if sound is None:
+        label_exc = tk.Label(root, textvariable=val, font=("Arial", 14))
+        label_exc.pack()
     else:
-        exc = 'Спочатку відкрийте музичний файл!'
+        sound.play()
+    
+        
+    
        
     
 def pause():
@@ -74,7 +79,9 @@ scal.pack(side='bottom', pady=70)
 button_file = Button(text='Вибрати файл', command=open_file)
 button_file.pack()
 
-label_exc = Label(text='')
+val = tk.StringVar()
+val.set('Спочатку виберіть файл!')
+    
 
 root.configure(bg='DeepSkyBlue')
 root.mainloop()
